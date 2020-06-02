@@ -1,0 +1,7 @@
+{
+  "name": "habla-con-me",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
