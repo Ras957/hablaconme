@@ -1,0 +1,144 @@
+
+form{
+    vertical-align: middle;
+    text-align: left;
+    margin-top:25px;
+    margin-bottom: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  ion-slides{
+    --bullet-background-active: #D9017A;
+    padding-bottom: 40px;
+  }
+  ion-slide{
+    display: block;
+  }
+  ion-toolbar{
+    height: 40px;
+  }
+  
+  ion-toolbar ion-button{
+    position: absolute;
+    top:-1px;
+    right: 0px;
+    --box-shadow:none !important;
+    --background: white;
+    color: #212322;
+  }
+  .logo_header{
+    width: 18px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .texto_header{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+.boton_pie_rosa{
+    text-transform: none;
+    font-family: HKGrotesk !important;
+    font-weight: bold;
+    font-size: 20px;
+    height: 60px;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    --border-style: none;
+    --color: #4A5E6E;
+    position: absolute;
+    bottom: 0;
+
+  }
+  .contenedor_boton_flotante{
+    margin-top: -10px;
+  }
+
+  
+  ion-checkbox{
+    margin-top: 3px;
+  }
+  ion-col{
+    display: flex;
+  }
+  ion-col p{
+    display: -webkit-inline-box;
+    margin-left: 5px;
+    margin-top: 3px;
+  }
+
+  .fecha{
+    width:100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  
+  #hora{
+    margin-left: 2%;
+    background: url(src/assets/imgs/Reloj.svg) no-repeat 15% 50%, url(src/assets/imgs/utc.svg) no-repeat  0 0/62px 100%  ;
+    background-position-x: 17%, 100%;
+    background-position-y: 50%, 0px;
+  
+  }
+  #fecha{
+    background: url(src/assets/imgs/Calendario_real.svg) no-repeat 5px 50%;
+    padding-left: 32px;
+  }
+  
+  
+  ion-datetime{
+    font-family: HKGrotesk;
+    font-size: 18px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    width: 46%;
+    min-width: 148px;
+    height: 55px;
+    /* padding: 5px; */
+    display: inline-table;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 18px;
+    width: 70%;
+  }
+
+  ion-item{
+    --border-width:0px !important;
+    --highlight-color-focused:none !important;
+    --inner-border-width: 0px !important;
+    --full-highlight-height: none;
+    --padding-start:15px;
+    --padding-end:15px;
+}
+ion-list{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+ion-item ion-icon{
+  margin-left: 5px;
+  margin-bottom: 3px;
+}
+
+.btn_excepcion{
+  margin-top: 0;
+  text-transform: none;
+  --background: #white !important;
+  color: #212322;
+  --color-activated: #212322;
+  border:1px solid #212322;
+  border-radius: 27px;    
+  --ion-color-contrast: none !important;
+  font-family: HKGrotesk !important;
+  width: 100%;
+}

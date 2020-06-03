@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo_header" src="./assets/imgs/cara_header.svg" />
+    <h4 class="texto_header">{{ "admin_tab3_cadena1" | translate}}</h4>
+  </ion-toolbar>
+  <ion-progress-bar *ngIf="barra_cargando == true" color="tertiary" type="indeterminate"></ion-progress-bar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed"  (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="null"></ion-refresher-content>
+      </ion-refresher>
+      
+  <h3 id="titulo">Metas activas</h3>
+
+  <ion-list *ngFor="let meta of listadoMetasActivas">
+    <ion-item (click)="presentModalMeta(meta)">
+      <ion-avatar class="metas_activas">
+        <img src="{{server_URL}}{{meta.imagen_cliente}}" />
+        <img class="margin30" src="{{server_URL}}{{meta.imagen}}" />
+      </ion-avatar>
+      <ion-label>
+        <h3>{{meta.nombre_cliente}}</h3>
+        <p class="margin30">{{meta.titulo}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <h3 id="titulo">Metas anteriores</h3>
+
+  <ion-list *ngFor="let meta of listadoMetasFinalizadasArray">
+    <ion-item class="lista_metas">
+      <ion-avatar>
+        <img src="{{server_URL}}{{meta.value.imagen_cliente}}"/>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{meta.key}}</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-list *ngFor="let dato of meta.value.metas">
+      <ng-container *ngIf="dato.nombre_cliente == meta.nombre_cliente">
+        <ion-item class="lista_metas_item">
+          <ion-avatar>
+            <img src="{{server_URL}}{{dato.imagen}}" />
+          </ion-avatar>
+          <ion-label>
+            <p>{{dato.titulo}}</p>
+          </ion-label>
+        </ion-item>
+      </ng-container>
+    </ion-list>
+
+  </ion-list>
+</ion-content>
+
+<ion-fab (click)="presentModalAyadirEditarMeta()" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button size="small" color="tertiary">
+    <ion-icon class="icono_boton" name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

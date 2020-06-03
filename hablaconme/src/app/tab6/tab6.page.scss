@@ -1,0 +1,88 @@
+ion-content{
+  //--padding-top: 20px;
+}
+form{
+    vertical-align: middle;
+    text-align: center;
+    margin-top:25px;
+    margin-bottom: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  ion-toolbar{
+    height: 40px;
+  }
+  
+  ion-toolbar ion-button{
+    position: absolute;
+    top:-1px;
+    right: 0px;
+    --box-shadow:none !important;
+    --background: white;
+    color: #212322;
+  }
+  .logo_header{
+    width: 18px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .texto_header{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+
+  ion-label{
+    margin-left: 15px;
+  }
+
+  ion-label p{
+    display: -webkit-inline-box;
+  }
+  ion-label ion-icon{
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  ion-fab-button ion-icon{
+    margin-left: 4px;
+  }
+
+  .telefono{
+    font-size: 12px;
+  }
+
+  ion-item{
+    --border-width:0px !important;
+    --highlight-color-focused:none !important;
+    --inner-border-width: 0px !important;
+    --full-highlight-height: none;
+    --padding-start:15px;
+    --padding-end:15px;
+}
+
+  ion-item a{
+    text-decoration: underline;
+    color: #D9017A;
+  }
+
+  .lista_hoy{
+    background: #FDF2B8;
+  }
+  .lista_hoy ion-item{
+    --background: #FDF2B8;
+  }
+
+  .lista_proximos{
+    margin-top: -15px;
+  }
+
+  .icono_boton{
+    margin-right: 4px;
+  }

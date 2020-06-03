@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar>
+      <img class="logo_header" src="./assets/imgs/cara_header.svg" />
+      <h4 class="texto_header">{{ "admin_tab1_cadena1" | translate}}</h4>
+    </ion-toolbar>
+    <ion-progress-bar *ngIf="barra_cargando == true" color="tertiary" type="indeterminate"></ion-progress-bar>
+  </ion-header>
+  
+
+<ion-content>
+    <ion-refresher slot="fixed"  (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="null"></ion-refresher-content>
+      </ion-refresher>
+    <ion-list class="lista_hoy" >
+        <ion-item *ngFor="let sesionHoy of listadoSesionesHoy">      
+          <ion-avatar>
+              <img src="{{sesionHoy.imagen_usuario}}" />
+          </ion-avatar>
+          <ion-label>
+          <h3>{{sesionHoy.usuario_nombre}}</h3>
+          <ion-icon name="videocam"></ion-icon>
+          <p>{{sesionHoy.fecha}}</p>
+        </ion-label>
+        <ion-fab-button size="small" color="tertiary">
+            <ion-icon (click)="presentModalVideollamada(sesionHoy)"*ngIf="sesionHoy.tipo == 'Videollamada'" name="send"></ion-icon>
+            <ion-icon *ngIf="sesionHoy.tipo == 'Inicial'" name="color-wand"></ion-icon>
+            <ion-icon *ngIf="sesionHoy.tipo == 'Llamada'" name="call"></ion-icon>
+        </ion-fab-button>
+        </ion-item>
+
+        </ion-list>
+
+        <ion-list class="lista_proximos" >
+        <ion-item *ngFor="let sesion of listadoSesiones">      
+            <ion-avatar>
+                <img src="{{sesion.imagen_usuario}}" />
+            </ion-avatar>
+            <ion-label>
+            <h3>{{sesion.usuario_nombre}}</h3>
+            <ion-icon *ngIf="sesion.tipo == 'Videollamada'" name="send"></ion-icon>
+            <ion-icon *ngIf="sesion.tipo == 'Inicial'" name="color-wand"></ion-icon>
+            <ion-icon *ngIf="sesion.tipo == 'Llamada'" name="call"></ion-icon>
+            <p>{{sesion.fecha}}</p>
+          </ion-label>
+          <a (click)=" eliminarSesion(sesion)">Cancelar</a>
+        </ion-item>
+          
+
+      </ion-list>
+
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentModalLlamada()">
+          <ion-fab-button size="small" color="tertiary">
+            <ion-icon class="icono_boton" name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+</ion-content>
+
+

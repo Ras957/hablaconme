@@ -1,0 +1,239 @@
+<ion-router-outlet id="content" main></ion-router-outlet>
+
+<ion-menu side="end" contentId="content">
+  <ion-header>
+    <ion-toolbar>
+      <div (click)="cerrarMenu()" class="atras"> </div>
+      <img class="logo_header" src="./assets/imgs/Izquierda2.svg" />
+      <h4 class="texto_header">{{"menu_cadena1" | translate}}</h4>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content *ngIf="!admin">
+    <form *ngIf="preferencias_form" [formGroup]="preferencias_form">
+      <h4>{{"menu_cadena2" | translate}}</h4>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('movil_recordatorio_videollamada', $event)"
+        formControlName="movil_recordatorio_videollamada" checked="{{preferencias_form.movil_recordatorio_videollamada}}">
+        </ion-toggle>
+        <p>{{"menu_cadena3" | translate}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('movil_recordatorio_llamada', $event)"
+          formControlName="movil_recordatorio_llamada" checked="{{preferencias_form.movil_recordatorio_llamada}}">
+        </ion-toggle>
+        <p>{{"menu_cadena4" | translate}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('movil_mensajes_chat', $event)" formControlName="movil_mensajes_chat"
+          checked="preferencias_form.movil_mensajes_chat"></ion-toggle>
+        <p>{{"menu_cadena5" | translate}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('movil_cosas_nuevas', $event)" formControlName="movil_cosas_nuevas"
+          checked="preferencias_form.movil_cosas_nuevas"></ion-toggle>
+        <p>{{"menu_cadena6" | translate}}</p>
+      </ion-item>
+
+      <h4>{{"menu_cadena7" | translate}}</h4>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('email_recordatorio_videollamada', $event)"
+          formControlName="email_recordatorio_videollamada" checked="preferencias_form.email_recordatorio_videollamada">
+        </ion-toggle>
+        <p>{{"menu_cadena8" | translate}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('email_recordatorio_llamada', $event)"
+          formControlName="email_recordatorio_llamada" checked="preferencias_form.email_recordatorio_llamada"></ion-toggle>
+        <p>{{"menu_cadena9" | translate}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('email_mensajes_chat', $event)" formControlName="email_mensajes_chat"
+          checked="preferencias_form.email_mensajes_chat"></ion-toggle>
+        <p>{{"menu_cadena10" | translate}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('email_cosas_nuevas', $event)" formControlName="email_cosas_nuevas"
+          checked="preferencias_form.email_cosas_nuevas"></ion-toggle>
+        <p>{{"menu_cadena11" | translate}}</p>
+      </ion-item>
+
+      <h4>{{"menu_cadena12" | translate}}</h4>
+      <ion-item class="metodos_pago">
+        <ion-icon name="ios-card"></ion-icon>
+        <p>{{"menu_cadena13" | translate}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-toggle (ionChange)="actualiza_campo('pago_automatico', $event)" formControlName="pago_automatico"
+          checked="preferencias_form.pago_automatico"></ion-toggle>
+        <p>{{"menu_cadena14" | translate}}</p>
+      </ion-item>
+
+    </form>
+    <div class="plan" *ngIf="plan_actual">
+      <div class="tu_plan">
+        <h2>{{ "tab5_cadena5" | translate}}</h2>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <img *ngIf="plan_actual.nombre == '1D'" src="./assets/imgs/plan_1d.svg" />
+              <img *ngIf="plan_actual.nombre == '2D'" src="./assets/imgs/plan_2d.svg" />
+              <img *ngIf="plan_actual.nombre == '3D'" src="./assets/imgs/plan_3d.svg" />
+            </ion-col>
+            <ion-col>
+              <p *ngIf="plan_actual.nombre">{{ "tab5_cadena6" | translate}} {{plan_actual.nombre}}
+                {{ "tab5_cadena7" | translate}} {{plan_actual.fecha_caducidad}}.</p>
+              <ion-button class="boton" expand="full" size="large" shape="round" (click)="presentModalPago()">
+                {{"tab5_cadena8" | translate}}</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="actualizar_plan" *ngIf="plan_actual.nombre != '3D'">
+        <h2>{{ "tab5_cadena17" | translate}}</h2>
+        <a>{{ "tab5_cadena18" | translate}}</a>
+      </div>
+
+      <div class="tu_plan" *ngIf="plan_actual.nombre == '1D' ">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <img src="./assets/imgs/plan_2d.svg" />
+            </ion-col>
+            <ion-col>
+              <p>{{ "tab5_cadena19" | translate}}</p>
+              <ion-button (click)="presentModalPagoActualizar('2D')" class="boton2" expand="full" size="large"
+                shape="round" (click)="presentAlert_Pago_ok()">
+                {{"tab5_cadena15" | translate}}</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+      <div class="tu_plan" *ngIf="plan_actual.nombre == '1D' || plan_actual.nombre == '2D' ">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <img src="./assets/imgs/plan_3d.svg" />
+            </ion-col>
+            <ion-col>
+              <p *ngIf="plan_actual.nombre == '1D'">{{ "tab5_cadena20" | translate}}</p>
+              <p *ngIf="plan_actual.nombre == '2D'">{{ "tab5_cadena21" | translate}}</p>
+              <ion-button (click)="presentModalPagoActualizar('3D')" class="boton2" expand="full" size="large"
+                shape="round" (click)="presentAlert_Pago_ok()">
+                {{"tab5_cadena16" | translate}}</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+
+      <div class="pie">
+        <h4>{{ "menu_cadena15" | translate}}</h4>
+        <a (click)="cerrarSesion()">{{ "menu_cadena16" | translate}}</a>
+        <p>{{ "menu_cadena17" | translate}}</p>
+        <a routerLink="/borrar-datos-solicitud">{{ "menu_cadena18" | translate}}</a>
+
+        <h4 *ngIf="plan_actual.nombre != '1D'">{{ "menu_cadena19" | translate}}</h4>
+
+        <p *ngIf="plan_actual.nombre == '3D'">{{ "menu_cadena22" | translate}}</p>
+        <a *ngIf="plan_actual.nombre == '3D'">{{ "menu_cadena23" | translate}}</a>
+
+        <p *ngIf="plan_actual.nombre == '2D' || plan_actual.nombre == '3D'">{{ "menu_cadena20" | translate}}</p>
+        <a *ngIf="plan_actual.nombre == '2D' || plan_actual.nombre == '3D'">{{ "menu_cadena21" | translate}}</a>
+
+      </div>
+    </div>
+  </ion-content>
+
+  <ion-content *ngIf="admin">
+    <div class="selecciona_persona" *ngIf="datos_usuario_personales">
+      <img (click)="presentModalImagenAvatar()" class="persona"
+        src="{{serverURL}}{{datos_usuario_personales.avatar}}" />
+    </div>
+
+
+    <form [formGroup]="usuario_form">
+      <ion-item>
+        <ion-label position="stacked">{{ "tab5_cadena1" | translate}}</ion-label>
+        <ion-input formControlName="nombre" (ionBlur)="actualiza_campo('nombre')"></ion-input>
+      </ion-item>
+    </form>
+
+    <form [formGroup]="contrasenya_form">
+      <h4>{{ "tab5_cadena11" | translate}}</h4>
+      <ion-item>
+        <ion-label position="stacked">{{ "tab5_cadena12" | translate}}</ion-label>
+        <ion-input formControlName="contrasenya" placeholder="***"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{ "tab5_cadena13" | translate}}</ion-label>
+        <ion-input formControlName="contrasenyaConfirmacion" placeholder="***"></ion-input>
+      </ion-item>
+      <ion-button (click)="actualizarContrasenya()" [disabled]="!contrasenya_form.valid" class="btn_contraseya"
+        shape="round">
+        {{ "tab5_cadena14" | translate}}
+      </ion-button>
+    </form>
+
+    <div class="pie">
+      <h4>{{ "menu_cadena15" | translate}}</h4>
+      <a (click)="cerrarSesion()">{{ "menu_cadena16" | translate}}</a>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<ion-tabs main>
+  <ion-tab-bar color="success" slot="bottom">
+    <ion-tab-button *ngIf="admin!=true" tab="tab1">
+      <ion-icon name="videocam"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin!=true" tab="tab2">
+      <ion-icon name="chatbox"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin!=true" tab="tab3">
+      <ion-icon name="ribbon"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin!=true" tab="tab4">
+      <ion-icon name="notifications"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin!=true" tab="tab5">
+      <ion-icon name="person"></ion-icon>
+    </ion-tab-button>
+
+
+    <!--////////////////////menu admin/////////////////////////////7-->
+
+    <ion-tab-button *ngIf="admin==true" tab="tab6">
+      <ion-icon name="videocam"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin==true" tab="tab7">
+      <ion-icon name="chatbox"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin==true" tab="tab8">
+      <ion-icon name="ribbon"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin==true" tab="tab9">
+      <ion-icon name="cash"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin==true" tab="tab10">
+      <ion-icon name="person"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button *ngIf="admin==true" tab="tab11">
+      <ion-icon name="calendar"></ion-icon>
+    </ion-tab-button>
+
+
+  </ion-tab-bar>
+</ion-tabs>

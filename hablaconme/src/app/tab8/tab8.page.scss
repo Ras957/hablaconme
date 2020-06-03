@@ -1,0 +1,113 @@
+  ion-toolbar{
+    height: 40px;
+  }
+  
+  ion-toolbar ion-button{
+    position: absolute;
+    top:-1px;
+    right: 0px;
+    --box-shadow:none !important;
+    --background: white;
+    color: #212322;
+  }
+  .logo_header{
+    width: 18px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .texto_header{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+.boton_pie_rosa{
+    text-transform: none;
+    font-family: HKGrotesk !important;
+    font-weight: bold;
+    font-size: 20px;
+    height: 60px;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    --border-style: none;
+    --color: #4A5E6E;
+    position: absolute;
+    bottom: 0;
+
+  }
+  .contenedor_boton_flotante{
+    margin-top: -10px;
+  }
+
+
+  ion-label{
+    margin-left: 15px;
+    padding-top: 1px;
+  }
+
+  ion-label p{
+    display: -webkit-inline-box;
+    margin-top: 12px;
+  }
+
+
+  .telefono{
+    font-size: 12px;
+  }
+
+  ion-item{
+    --border-width:0px !important;
+    --highlight-color-focused:none !important;
+    --inner-border-width: 0px !important;
+    --full-highlight-height: none;
+    --padding-start:15px;
+    --padding-end:15px;
+}
+
+.metas_activas{
+  margin-top: -25px;
+}
+
+ion-avatar{
+  width: 25px;
+  height: 25px;
+}
+
+
+#titulo{
+
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.lista_metas{
+  height: 45px;
+}
+
+.lista_metas_item{
+  margin-left: 20px;
+  height: 45px;
+}
+
+.margin30{
+  margin-left: 20px;
+}
+
+
+.lista_metas ion-avatar{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.lista_metas ion-label{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+

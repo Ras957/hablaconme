@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+      <img class="logo_header" src="./assets/imgs/cara_header.svg" />
+      <h4 class="texto_header">{{ "admin_tab2_cadena1" | translate}}</h4>
+    </ion-toolbar>
+    <ion-progress-bar *ngIf="barra_cargando == true" color="tertiary" type="indeterminate"></ion-progress-bar>
+  </ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed"  (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="null"></ion-refresher-content>
+      </ion-refresher>
+<ion-list *ngFor="let chat of listadoChats">
+    <ion-item class ="no-leido" *ngIf="chat.leido == false" (click)="presentModalMensaje(chat)">      
+        <ion-avatar>
+            <img src="{{server_URL}}{{chat.imagen}}"  />
+        </ion-avatar>
+        <ion-label>
+        <h3>{{chat.cliente_nombre}}</h3>
+        <p>{{chat.ultimo_mensaje}}</p>
+      </ion-label>
+      <p class="fecha">{{chat.fecha_modificacion}}</p>
+      </ion-item>
+  <ion-item *ngIf="chat.leido == true" (click)="presentModalMensaje(chat)">      
+    <ion-avatar>
+        <img src="{{server_URL}}{{chat.imagen}}"  />
+    </ion-avatar>
+    <ion-label>
+    <h3>{{chat.cliente_nombre}}</h3>
+    <p>{{chat.ultimo_mensaje}}</p>
+  </ion-label>
+  <p class="fecha">{{chat.fecha_modificacion}}</p>
+  </ion-item>
+</ion-list>
+</ion-content>
+
+

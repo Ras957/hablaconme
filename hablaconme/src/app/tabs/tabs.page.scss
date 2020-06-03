@@ -1,0 +1,172 @@
+ion-menu {
+    --width: 100%;
+
+    
+  }
+
+  form{
+    vertical-align: middle;
+    text-align: center;
+    margin-top:25px;
+    margin-bottom: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+ion-toolbar{
+    height: 40px;
+}
+.atras{
+    width: 40px;
+    height:40px;
+    position: absolute;
+    top: 0px;
+    margin-bottom: 5px;
+}
+.logo_header{
+    width: 10px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .texto_header{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  ion-menu h4{
+      margin-bottom: 0;
+  }
+
+
+
+ion-toggle{
+    --background-checked: #D9017A;
+    --handle-background-checked: #F2F0E8;
+}
+
+form ion-item{
+    --border-width:0px !important;
+    --highlight-color-focused:none !important;
+    --inner-border-width: 0px !important;
+    --full-highlight-height: none;
+    
+ }
+form ion-item ion-label{
+   margin-bottom: 10px;
+   font-family:  HKGrotesk;
+}
+
+form ion-item ion-input{
+    border:1px solid #F2F0E8;
+    --padding-start:10px;
+    --color:#212322;
+    font-family:  HKGrotesk;
+ }
+
+.metodos_pago{
+    margin-left: 15px;
+}
+
+.metodos_pago ion-icon{
+    margin-right: 22px;
+}
+.metodos_pago p{
+    text-decoration: underline;
+}
+
+
+.tu_plan h2{
+    text-align: center;
+}
+.tu_plan ion-grid{
+   text-align: left;
+}
+.boton{
+   margin: 5% 0% 5% 0%;
+   text-transform: none;
+   --background: #D9017A !important;
+   color: white;
+   --ion-color-contrast: none !important;
+   font-family: HKGrotesk !important;
+   font-weight: bold;
+}
+
+.boton2{
+  
+   margin: 5% 0% 5% 0%;
+   text-transform: none;
+   --background: #white !important;
+   color: #D9017A;
+   --color-activated: #D9017A;
+   border:3px solid #D9017A;
+   border-radius: 27px;  
+   --ion-color-contrast: none !important;
+   font-family: HKGrotesk !important;
+   font-weight: bold;
+}
+
+.actualizar_plan{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.actualizar_plan h2{
+    margin-bottom: 0;
+}
+
+.actualizar_plan a{
+    color: #212322;
+    text-decoration: underline;
+}
+
+.pie{
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
+.pie h4{
+    margin-bottom: 15px;
+}
+
+.pie a{
+    color: #212322;
+    text-decoration: underline;
+}
+
+.selecciona_persona{
+    width:100%;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.persona{
+    width: 46%;
+    display: inline-table;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 10px;
+    border-radius: 100%;
+
+}
+
+
+.btn_contraseya{
+    margin: 5% 0% 5% 0%;
+    text-transform: none;
+    --background: #white !important;
+    color: #212322;
+    --color-activated: #212322;
+    border:1px solid #212322;
+    border-radius: 27px;    
+    --ion-color-contrast: none !important;
+    font-family: HKGrotesk !important;
+
+}
