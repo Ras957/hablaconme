@@ -1,0 +1,51 @@
+    ion-toolbar{
+    height: 40px;
+  }
+  
+  ion-toolbar ion-buttons{
+    position: absolute;
+    top:-1px;
+    right: 0px;
+    --box-shadow:none !important;
+    --background: white;
+    color: #212322;
+  }
+  .logo_header{
+    width: 18px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .texto_header{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+
+.boton_pie_rosa{
+    text-transform: none;
+    font-family: HKGrotesk !important;
+    font-size: 14px;
+    height: 60px;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    --border-style: none;
+    --background: #F2F0E8;
+    --color:#212322;
+    --color-activated:#212322;
+  }
+  .contenedor_boton_flotante{
+    margin-top: -10px;
+  }
+
+  .contenedor_boton_flotante ion-icon{
+      margin-right: 5px;
+      margin-bottom: 3px;
+  }

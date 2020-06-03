@@ -1,0 +1,29 @@
+<ion-content class="background">
+  <form [formGroup]="registro_form" >
+    <h1>{{ "signup_cadena1" | translate}}</h1>
+    <p>{{ "signup_cadena2" | translate}}</p>
+    <ion-item >
+      <ion-input class="input_email" type="text" name="email" formControlName="email" placeholder='{{ "signup_cadena3" | translate}}' ></ion-input>
+    </ion-item>
+    <div class="politicas">
+        <h5>{{ "signup_cadena4" | translate}}</h5>
+        <p>{{ "signup_cadena5" | translate}}</p>
+        <ion-toggle color="light" (ionChange)="presentModal()" formControlName="privacidad" disabled="{{valor_toggle}}"></ion-toggle>
+    </div>
+    <ion-button class="boton" color="light" expand="full" shape="round" size="large" (click)="registro()"  [disabled]="!registro_form.valid">{{ "signup_cadena6" | translate}}</ion-button>
+
+    <p class="linea_texto">{{ "signup_cadena7" | translate}}</p>
+
+    <ion-button class="boton_social_google" color="light" expand="full" shape="round" size="large" (click)="registroGoogle()">
+      <img class="logo" src="./assets/imgs/sociales/Google.svg"/>
+      {{ "signup_cadena8" | translate}}
+    </ion-button>
+    <ion-button class="boton_social_facebook" color="secondary" expand="full" shape="round" size="large" (click)="registroFacebook()">
+      <img class="logo" src="./assets/imgs/sociales/Facebook.svg"/>
+      {{ "signup_cadena9" | translate}}
+    </ion-button>
+  </form>
+  <div class="contenedor_bajo">
+    <a class="enlace_login" button routerLink="/sign-in" >{{ "portada_tengo_cuenta" | translate}}</a>
+  </div>
+</ion-content>

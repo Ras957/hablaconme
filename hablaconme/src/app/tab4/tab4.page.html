@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo_header" src="./assets/imgs/cara_header.svg" />
+    <h4 class="texto_header">{{ "tab4_cadena1" | translate}}</h4>
+    <ion-buttons slot="end">
+      <ion-button (click)="abreMenu()">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+          <p>Tienes 3 nuevos mensajes</p>
+          <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <p>¡Nuestro libro superchuli está ya disponible!</p>
+          <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <p>¡Enrique ha programado una nueva meta!</p>
+          <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <p>Queda media hora para que comience nuestra conversación, ¿lo tiene todo listo?</p>
+          <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <p>El martes 12 de abril termina el período de contratación de tu plan actual</p>
+          <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<div class="contenedor_boton_flotante">
+  <ion-button  class="boton_pie_rosa" expand="full" >
+      <ion-icon name="trash" ></ion-icon>
+      <p>{{"tab4_btn1" | translate}}</p>
+    </ion-button>
+</div>

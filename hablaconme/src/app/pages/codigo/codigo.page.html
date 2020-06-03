@@ -1,0 +1,37 @@
+<ion-content class="background">
+  <form [formGroup]="codigo_form">
+      <h1>{{"codigo_cadena1" | translate}}</h1>
+      <img class="imagenes" src="./assets/imgs/bocadillo-corazon.png"/>
+
+      <h3>{{"codigo_cadena2" | translate}}</h3>
+      <p>{{"codigo_cadena3" | translate}} {{usuario}} {{"codigo_cadena3b" | translate}}</p>
+      <p>{{"codigo_cadena4" | translate}}</p>
+      <div class="entrada">
+         
+          <ion-input class="input_codigo" type="text"  formControlName="codigo" maxlength="3" (ionChange)="comprobarCodigo()"> <h3>H-</h3></ion-input>
+      </div>
+  </form>
+
+  <div class="pie">
+      <h4>{{"codigo_cadena5" | translate}}</h4>
+      <ion-item>
+        <div class="contenedor_imagen">
+          <img class="imagenes_pie" src="./assets/imgs/spam.svg"/>
+        </div>
+        <p>{{"codigo_cadena6" | translate}}</p>
+      </ion-item>
+      <ion-item>
+          <div class="contenedor_imagen">
+          <img class="imagenes_pie" src="./assets/imgs/despiste.svg"/>
+          </div>
+        <p>{{"codigo_cadena7a" | translate}} {{usuario}} {{"codigo_cadena7b" | translate}}</p>
+      </ion-item>
+      <ion-item>
+          <div class="contenedor_imagen">
+          <img class="imagenes_pie_globo" src="./assets/imgs/globo.svg">
+          </div>
+        <p>{{"codigo_cadena8" | translate}}</p>
+      </ion-item>
+    </div>
+</ion-content>
+

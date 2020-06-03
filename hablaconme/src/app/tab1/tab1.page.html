@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo_header" src="./assets/imgs/cara_header.svg" />
+    <h4 class="texto_header">{{ "tab1_cadena1" | translate}}</h4>
+    <ion-buttons slot="end">
+      <ion-button (click)="abreMenu()">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-progress-bar *ngIf="barra_cargando == true" color="tertiary" type="indeterminate"></ion-progress-bar>
+</ion-header>
+
+<ion-content *ngIf="tiempo_espera_videollamada==true">
+    <ion-refresher slot="fixed"  (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="null"></ion-refresher-content>
+    </ion-refresher>
+  <form [formGroup]="llamada_form">
+    <h1>{{ "tab1_cadena2" | translate}}</h1>
+    <div *ngIf="reserva_videollamada==false">
+      <img src="./assets/imgs/fechahora.svg" />
+      <p>{{ "tab1_cadena3" | translate}}</p>
+      <h2>{{ "tab1_cadena4" | translate}}</h2>
+      <div class="fecha">
+        <ion-item>
+          <ion-datetime (ionChange)="listarHoras()" name="fecha" formControlName="fecha"
+            placeholder='{{ "formulario_fechayhora1" | translate}}' color="secondary" id="fecha"
+            displayFormat="DD/MM/YYYY" value="{{datetime_min}}" min="{{datetime_min}}" max="{{datetime_max}}"
+            done-text="Hecho" cancelText="Cancelar"></ion-datetime>
+        </ion-item>
+        <ion-item *ngIf="horasDisponibles.length >0">
+          <ion-datetime id="hora" name="hora" formControlName="hora"
+            placeholder='{{ "formulario_fechayhora2" | translate}}' display-format="HH:mm"
+            hourValues="{{horasDisponibles}}" minuteValues="0" done-text="Hecho" cancelText="Cancelar"></ion-datetime>
+        </ion-item>
+        <div *ngIf="horasDisponibles.length >0">
+          <p id="utc">{{ "formulario_fechayhora3" | translate}} {{utc_formato}}</p>
+        </div>
+        <ion-item class="center" *ngIf="horasDisponibles.length ==0 && noHoras!=false;">
+          <h5 class="rojo">{{ "tab1_cadena11" | translate}}</h5>
+        </ion-item>
+      </div>
+    </div>
+
+    <div *ngIf="reserva_videollamada==true">
+      <div class="selecciona_persona">
+        <img class="persona2" [ngStyle]="{'filter': filter_default}"
+          src="{{serverURL}}{{info_usuarios.cliente_imagen}}" />
+        <img class="persona2" [ngStyle]="{'filter': filter_default}" src="{{serverURL}}{{info_usuarios.admin_imagen}}" />
+      </div>
+      <div class="usuarios">
+        <h3>{{info_usuarios.cliente_nombre}}</h3>
+        <h3>{{info_usuarios.admin_nombre}}</h3>
+      </div>
+      <div class="cita">
+        <p>{{ "primera_sesion_cadena51" | translate}}</p>
+        <p>{{ "primera_sesion_cadena52" | translate}} <strong>{{proxima_videollamada.fecha}}.</strong></p>
+        <p>{{ "primera_sesion_cadena53" | translate}}</p>
+      </div>
+    </div>
+
+    <div *ngIf="plan=='3d' && reserva_llamada==true">
+      <h1>{{ "tab1_cadena5" | translate}}</h1>
+      <img src="./assets/imgs/llamadas.svg" />
+      <p>{{ "tab1_cadena6" | translate}} {{proxima_llamada.fecha}}.</p>
+    </div>
+
+    <div *ngIf="reserva_videollamada==true" class="listado">
+      <h5>{{ "tab1_cadena7" | translate}}</h5>
+      <ion-list>
+        <ng-container  *ngFor="let pasada of sesiones_pasadas">
+           <p>-{{pasada.fecha}}</p>
+        </ng-container>
+       
+  
+      </ion-list>
+
+      <h5>{{ "tab1_cadena8" | translate}}</h5>
+      <p>{{ "tab1_cadena9" | translate}}</p>
+      <a (click)="presentModalModificarFecha()">{{ "tab1_cadena10" | translate}}</a>
+    </div>
+
+  </form>
+
+</ion-content>
+<ion-content *ngIf="tiempo_espera_videollamada==false">
+  <div class="contenido">
+    <img class="imagen" src="./assets/imgs/vamos.svg" />
+    <h1>{{"entrar_videollamada_cadena2" | translate}}</h1>
+  </div>
+</ion-content>
+
+
+<div class="contenedor_boton_flotante">
+  <ion-button (click)="crearVideollamada()" [disabled]="!llamada_form.valid" *ngIf="reserva_videollamada==false"
+    class="boton_pie_rosa" expand="full" color="tertiary">{{"tab1_btn_videollamada" | translate}}</ion-button>
+  <ion-button (click)="entrarVideollamada()"*ngIf="tiempo_espera_videollamada==false" class="boton_pie_rosa" expand="full" color="tertiary">
+    {{"entrar_videollamada_cadena3" | translate}}</ion-button>
+</div>

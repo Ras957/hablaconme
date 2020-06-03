@@ -1,0 +1,309 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo_header" src="./assets/imgs/cara_header.svg"/>
+    <h4 *ngIf="primer_pago != true" class="texto_header">{{ "primera_sesion_cadena1" | translate}}</h4>
+    <h4 *ngIf="primer_pago == true" class="texto_header">{{ "primera_sesion_cadena2" | translate}}</h4>
+  </ion-toolbar>
+  <ion-progress-bar *ngIf="barra_cargando == true" color="tertiary" type="indeterminate"></ion-progress-bar>
+</ion-header>
+
+<ion-content *ngIf="reserva_videollamada!=true">
+    <ion-refresher slot="fixed"  (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="null"></ion-refresher-content>
+      </ion-refresher>
+  <form [formGroup]="llamada_form">
+    <ion-item>
+      <img class="imagen" src="./assets/imgs/fuegos_artificiales.svg"/>
+     <h1>{{ "primera_sesion_cadena3" | translate}}</h1>
+    </ion-item>
+    <h3>{{ "primera_sesion_cadena4" | translate}}</h3>
+    <div class="selecciona_persona">
+        <img class="persona" (click)="seleccionar_persona(1)"  [ngStyle]="{'filter': filter_bn_1}"src="./assets/imgs/Ale.svg"/>
+        <img class="persona" (click)="seleccionar_persona(2)"  [ngStyle]="{'filter': filter_bn_2}"src="./assets/imgs/Enrique.svg"/>
+    </div>
+    <h3>{{ "primera_sesion_cadena5" | translate}}</h3>
+    <div class="fecha">
+      <ion-item>
+        <ion-datetime (ionChange)="listarHoras()" name="fecha" formControlName="fecha"
+          placeholder='{{ "formulario_fechayhora1" | translate}}' color="secondary" id="fecha"
+          displayFormat="DD/MM/YYYY" value="{{datetime_min}}" min="{{datetime_min}}" max="{{datetime_max}}"
+          done-text="Hecho" cancelText="Cancelar"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="horasDisponibles.length >0">
+        <ion-datetime id="hora" name="hora" formControlName="hora"
+          placeholder='{{ "formulario_fechayhora2" | translate}}' display-format="HH:mm"
+          hourValues="{{horasDisponibles}}" minuteValues="0" done-text="Hecho" cancelText="Cancelar"></ion-datetime>
+      </ion-item>
+      <div *ngIf="horasDisponibles.length >0">
+        <p id="utc">{{ "formulario_fechayhora3" | translate}} {{utc_formato}}</p>
+      </div>
+      <ion-item class="center" *ngIf="horasDisponibles.length ==0 && noHoras!=false;">
+        <h5 class="rojo">{{ "tab1_cadena11" | translate}}</h5>
+      </ion-item>
+    </div>
+  </form>
+  <div class="separador"></div>
+
+  <div class="informacion">
+    <h4>{{ "primera_sesion_cadena6" | translate}}</h4>
+    <h5>{{ "primera_sesion_cadena7" | translate}}</h5>
+    <p> {{ "primera_sesion_cadena8" | translate}}</p>
+    
+    <h5>{{ "primera_sesion_cadena9" | translate}}</h5>
+    <p>{{ "primera_sesion_cadena10" | translate}} <a href="">{{ "primera_sesion_cadena11" | translate}}</a>{{ "primera_sesion_cadena12" | translate}}</p>
+
+    <h5>{{ "primera_sesion_cadena13" | translate}}</h5>
+    <p>{{ "primera_sesion_cadena14" | translate}}</p>
+  
+    <h5>{{ "primera_sesion_cadena15" | translate}}</h5>
+    <p>{{ "primera_sesion_cadena16" | translate}}</p>
+
+    <h5>{{ "primera_sesion_cadena17" | translate}}</h5>
+    <p>{{ "primera_sesion_cadena18" | translate}}</p>
+
+    <h5>{{ "primera_sesion_cadena19" | translate}}</h5>
+    <p>{{ "primera_sesion_cadena20" | translate}}</p>
+
+    <h5>{{ "primera_sesion_cadena21" | translate}}</h5>
+    <p>{{ "primera_sesion_cadena22" | translate}}</p>
+
+    <h5>{{ "primera_sesion_cadena23" | translate}}</h5>
+    <p>{{ "primera_sesion_cadena24" | translate}}</p>
+    <p>{{ "primera_sesion_cadena25" | translate}}</p>
+  </div>
+
+  <div class="precios">
+    <img class="imagen_precios" src="./assets/imgs/tabla_precios.svg"/>
+  </div>
+
+  <div *ngIf="precios_select == 1" class="tarifas">
+    <ion-grid>
+      <ion-row style="margin-top: 49px" class="fila_precios">
+        <ion-col><h5>{{ "primera_sesion_cadena26" | translate}}</h5></ion-col>
+        <ion-col><h5>{{ "primera_sesion_cadena27" | translate}}</h5></ion-col>
+        <ion-col><p>{{ "primera_sesion_cadena28" | translate}}</p></ion-col>
+      </ion-row>
+      <ion-row class="fila_mes">
+        <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+        <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+        <ion-col><p></p></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="precios_select == 2" class="tarifas">
+    <ion-grid>
+        <ion-row class="descuentos_padre">
+            <ion-col size="2"></ion-col>
+            <ion-col size="6"><p class="descuento">{{ "primera_sesion_cadena36" | translate}}</p></ion-col>
+            <ion-col size="3" style="position: absolute; right: 0; display: none;"><p class="descuento">20% dto.</p></ion-col>
+          </ion-row>
+      <ion-row class="fila_precios">
+        <ion-col><h5>{{ "primera_sesion_cadena30" | translate}}</h5></ion-col>
+        <ion-col><h5>{{ "primera_sesion_cadena31" | translate}}</h5></ion-col>
+        <ion-col><h5>{{ "primera_sesion_cadena32" | translate}}</h5></ion-col>
+      </ion-row>
+      <ion-row class="fila_mes">
+        <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+        <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+        <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="precios_select == 3" class="tarifas">
+    <ion-grid>
+      <ion-row class="descuentos_padre">
+        <ion-col size="2"></ion-col>
+        <ion-col size="6"><p class="descuento">{{ "primera_sesion_cadena37" | translate}}</p></ion-col>
+        <ion-col size="3" style="position: absolute; right: 0;"><p class="descuento">{{ "primera_sesion_cadena38" | translate}}</p></ion-col>
+      </ion-row>
+      <ion-row class="fila_precios">
+        <ion-col><h5>{{ "primera_sesion_cadena33" | translate}}</h5></ion-col>
+        <ion-col><h5>{{ "primera_sesion_cadena34" | translate}}</h5></ion-col>
+        <ion-col><h5>{{ "primera_sesion_cadena35" | translate}}</h5></ion-col>
+      </ion-row>
+      <ion-row class="fila_mes">
+        <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+        <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+        <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="selector_precios">
+    <ion-button class="boton_precios"  (click)="color(1)"  color="white" [ngStyle]="{'background': buttonColor1, 'color': colorText1}" shape="round">{{ "primera_sesion_cadena39" | translate}}</ion-button>
+    <ion-button class="boton_precios"  (click)="color(2)" color="white"  [ngStyle]="{'background': buttonColor2, 'color': colorText2}" shape="round">{{ "primera_sesion_cadena40" | translate}}</ion-button>
+    <ion-button class="boton_precios"  (click)="color(3)"  color="white" [ngStyle]="{'background': buttonColor3, 'color': colorText3}" shape="round">{{ "primera_sesion_cadena41" | translate}}</ion-button>
+  </div>
+
+  <div class="pie">
+    <h5>{{ "primera_sesion_cadena42" | translate}}</h5>
+    <ion-item>
+      <div class="contenedor_imagen">
+        <img class="imagenes_pie" src="./assets/imgs/camara.svg"/>
+      </div>
+      <p>{{ "primera_sesion_cadena43" | translate}}</p>
+    </ion-item>
+    <ion-item>
+        <div class="contenedor_imagen">
+        <img class="imagenes_pie" src="./assets/imgs/altavoz.svg"/>
+        </div>
+      <p>{{ "primera_sesion_cadena44" | translate}}</p>
+    </ion-item>
+    <ion-item>
+        <div class="contenedor_imagen">
+        <img class="imagenes_pie" src="./assets/imgs/texto.svg"/>
+        </div>
+      <p>{{ "primera_sesion_cadena45" | translate}}</p>
+    </ion-item>
+    <ion-item>
+      <div class="contenedor_imagen">
+      <img class="imagenes_pie" src="./assets/imgs/Calendario3.svg"/>
+      </div>
+    <p>{{ "primera_sesion_cadena46" | translate}}</p>
+  </ion-item>
+  <ion-item>
+    <div class="contenedor_imagen">
+    <img class="imagenes_pie" src="./assets/imgs/regalo2.svg"/>
+    </div>
+  <p>{{ "primera_sesion_cadena47" | translate}}</p>
+</ion-item>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="reserva_videollamada==true">
+    <ion-refresher slot="fixed"  (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="null"></ion-refresher-content>
+      </ion-refresher>
+    <form>
+        <div class="selecciona_persona">
+            <img class="persona2" [ngStyle]="{'filter': filter_default}"
+              src="{{serverURL}}{{info_usuarios.cliente_imagen}}" />
+            <img class="persona2" [ngStyle]="{'filter': filter_default}" src="{{serverURL}}{{info_usuarios.admin_imagen}}" />
+          </div>
+      <div class="usuarios">
+          <h3>{{info_usuarios.cliente_nombre}}</h3>
+        <h3>{{info_usuarios.admin_nombre}}</h3>
+      </div>
+      <div class="cita">
+        <p>{{ "primera_sesion_cadena51" | translate}}</p>
+        <p>{{ "primera_sesion_cadena52" | translate}} <strong>{{proxima_videollamada.fecha}}.</strong></p>
+        <p>{{ "primera_sesion_cadena53" | translate}}</p>
+      </div>
+    </form>
+    <div class="separador"></div>
+  
+    <div class="informacion">
+      <h3>{{ "primera_sesion_cadena55" | translate}}</h3>
+      <p>{{ "primera_sesion_cadena56" | translate}}</p>
+      
+      <p>{{ "primera_sesion_cadena57" | translate}}</p>
+
+    </div>
+  
+    <div class="precios">
+      <img class="imagen_precios" src="./assets/imgs/tabla_precios.svg"/>
+    </div>
+  
+    <div *ngIf="precios_select == 1" class="tarifas">
+      <ion-grid>
+        <ion-row style="margin-top: 49px" class="fila_precios">
+          <ion-col><h5>{{ "primera_sesion_cadena26" | translate}}</h5></ion-col>
+          <ion-col><h5>{{ "primera_sesion_cadena27" | translate}}</h5></ion-col>
+          <ion-col><p>{{ "primera_sesion_cadena28" | translate}}</p></ion-col>
+        </ion-row>
+        <ion-row class="fila_mes">
+          <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+          <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+          <ion-col><p></p></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div *ngIf="precios_select == 2" class="tarifas">
+      <ion-grid>
+          <ion-row class="descuentos_padre">
+              <ion-col size="2"></ion-col>
+              <ion-col size="6"><p class="descuento">{{ "primera_sesion_cadena36" | translate}}</p></ion-col>
+              <ion-col size="3" style="position: absolute; right: 0; display: none;"><p class="descuento">20% dto.</p></ion-col>
+            </ion-row>
+        <ion-row class="fila_precios">
+          <ion-col><h5>{{ "primera_sesion_cadena30" | translate}}</h5></ion-col>
+          <ion-col><h5>{{ "primera_sesion_cadena31" | translate}}</h5></ion-col>
+          <ion-col><h5>{{ "primera_sesion_cadena32" | translate}}</h5></ion-col>
+        </ion-row>
+        <ion-row class="fila_mes">
+          <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+          <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+          <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  
+    <div *ngIf="precios_select == 3" class="tarifas">
+      <ion-grid>
+        <ion-row class="descuentos_padre">
+          <ion-col size="2"></ion-col>
+          <ion-col size="6"><p class="descuento">{{ "primera_sesion_cadena37" | translate}}</p></ion-col>
+          <ion-col size="3" style="position: absolute; right: 0;"><p class="descuento">{{ "primera_sesion_cadena38" | translate}}</p></ion-col>
+        </ion-row>
+        <ion-row class="fila_precios">
+          <ion-col><h5>{{ "primera_sesion_cadena33" | translate}}</h5></ion-col>
+          <ion-col><h5>{{ "primera_sesion_cadena34" | translate}}</h5></ion-col>
+          <ion-col><h5>{{ "primera_sesion_cadena35" | translate}}</h5></ion-col>
+        </ion-row>
+        <ion-row class="fila_mes">
+          <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+          <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+          <ion-col><p>{{ "primera_sesion_cadena29" | translate}}</p></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  
+    <div class="selector_precios">
+      <ion-button class="boton_precios"  (click)="color(1)"  color="white" [ngStyle]="{'background': buttonColor1, 'color': colorText1}" shape="round">{{ "primera_sesion_cadena39" | translate}}</ion-button>
+      <ion-button class="boton_precios"  (click)="color(2)" color="white"  [ngStyle]="{'background': buttonColor2, 'color': colorText2}" shape="round">{{ "primera_sesion_cadena40" | translate}}</ion-button>
+      <ion-button class="boton_precios"  (click)="color(3)"  color="white" [ngStyle]="{'background': buttonColor3, 'color': colorText3}" shape="round">{{ "primera_sesion_cadena41" | translate}}</ion-button>
+    </div>
+
+  
+    <div class="pie">
+      <h5>{{ "primera_sesion_cadena42" | translate}}</h5>
+      <ion-item>
+        <div class="contenedor_imagen">
+          <img class="imagenes_pie" src="./assets/imgs/camara.svg"/>
+        </div>
+        <p>{{ "primera_sesion_cadena43" | translate}}</p>
+      </ion-item>
+      <ion-item>
+          <div class="contenedor_imagen">
+          <img class="imagenes_pie" src="./assets/imgs/altavoz.svg"/>
+          </div>
+        <p>{{ "primera_sesion_cadena44" | translate}}</p>
+      </ion-item>
+      <ion-item>
+          <div class="contenedor_imagen">
+          <img class="imagenes_pie" src="./assets/imgs/texto.svg"/>
+          </div>
+        <p>{{ "primera_sesion_cadena45" | translate}}</p>
+      </ion-item>
+      <ion-item>
+        <div class="contenedor_imagen">
+        <img class="imagenes_pie" src="./assets/imgs/Calendario3.svg"/>
+        </div>
+      <p>{{ "primera_sesion_cadena46" | translate}}</p>
+    </ion-item>
+    <ion-item>
+      <div class="contenedor_imagen">
+      <img class="imagenes_pie" src="./assets/imgs/regalo2.svg"/>
+      </div>
+    <p>{{ "primera_sesion_cadena47" | translate}}</p>
+  </ion-item>
+    </div>
+  </ion-content>
+
+<div class="contenedor_boton_flotante">
+  <ion-button (click)="presentModal()" [disabled]="!llamada_form.valid"  *ngIf="reserva_videollamada != true" class= "boton_pie_rosa" expand="full" color="tertiary" (click)="presentModal()">{{"primera_sesion_btn_reservar" | translate}}</ion-button>
+  <ion-button *ngIf="tiempo_espera_videollamada==false"class= "boton_pie_rosa" expand="full" color="medium" (click)="primeraSesion()" >{{"entrar_videollamada_cadena3" | translate}}</ion-button>
+
+</div>
+  

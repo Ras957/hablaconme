@@ -1,0 +1,27 @@
+<ion-content>
+  <form [formGroup]="email_magico" >
+    <h1>{{ "restablecer_contraseya_cadena1" | translate}}</h1>
+    <h3>{{ "restablecer_contraseya_cadena2" | translate}}</h3>
+    <img class="imagenes" src="./assets/imgs/conejo.svg"/>
+    <p>{{ "restablecer_contraseya_cadena3" | translate}}</p>
+    <ion-item>
+        <ion-input class="input_email" type="text" name="email"  placeholder='{{ "restablecer_contraseya_cadena4" | translate}}' formControlName="email_magic" ></ion-input>
+    </ion-item>
+    <ion-button class="boton" color="light" expand="full" shape="round" size="large" (click)="presentAlert_Magico()" [disabled]="!email_magico.valid" >{{ "restablecer_contraseya_cadena5" | translate}}</ion-button>
+  </form>
+
+  <div class="separador"></div>
+
+  <form [formGroup]="email_contraseya" >
+      <h3>Regenerar contraseña</h3>
+      <img class="imagenes" src="./assets/imgs/contraseya.svg"/>
+      <p>{{ "restablecer_contraseya_cadena7" | translate}}</p>
+      <ion-item>
+          <ion-input class="input_email" type="text" name="email"  placeholder='{{ "restablecer_contraseya_cadena4" | translate}}' formControlName="email_contra"></ion-input>
+      </ion-item>
+      <ion-button class="boton" color="light" expand="full" shape="round" size="large"   (click)="restablecerContrasenya()" [disabled]="!email_contraseya.valid">{{ "restablecer_contraseya_cadena8" | translate}}</ion-button>
+    </form>
+
+    <div class="separador2"></div>
+
+  </ion-content>

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo_header" src="./assets/imgs/cara_header.svg" />
+    <h4 class="texto_header">{{ "tab3_cadena1" | translate}}</h4>
+    <ion-buttons slot="end">
+      <ion-button (click)="abreMenu()">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-progress-bar *ngIf="barra_cargando == true" color="tertiary" type="indeterminate"></ion-progress-bar>
+</ion-header>
+
+<ion-content *ngIf="plan == '3D'">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="null"></ion-refresher-content>
+  </ion-refresher>
+  <form>
+    <ng-container *ngFor="let item of meta_activa">
+      <div>
+        <h1>{{item.titulo}}</h1>
+        <img src="{{serverURL}}{{item.imagen}}" />
+        <p>{{item.descripcion}}</p>
+      </div>
+
+      <form [formGroup]="rangos_form">
+        <ion-item class="range">
+          <ion-range (ionBlur)="actualizarProgreso()" min="0" max="100" formControlName="rango1"
+            (ionChange)="rangoCliente()">
+            <img class="imagen_range" slot="start" src="{{serverURL}}{{item.imagen_cliente}}" />
+            <ion-icon slot="end" size="large" name="ribbon"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+        <ion-item>
+          <ion-range min="0" max="100" formControlName="rango2" disabled="true">
+            <img class="imagen_range" slot="start" src="{{serverURL}}{{item.imagen_admin}}" />
+            <ion-icon slot="end" size="large" name="ribbon"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+      </form>
+    </ng-container>
+    <div *ngIf="metas_finalizadas">
+      <h1 *ngIf="metas_finalizadas.length > 0">{{ "tab3_cadena5" | translate}}</h1>
+      <ion-list>
+        <ion-item *ngFor="let meta of metas_finalizadas">
+          <ion-avatar class="metas_activas">
+            <img class="margin30" src="{{serverURL}}{{meta.imagen}}" />
+          </ion-avatar>
+          <ion-label>
+            <p class="margin30">{{meta.titulo}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </form>
+</ion-content>
+
+
+  <ion-content *ngIf="plan!='3D'" class="info">
+    <div class="upgrade_plan">
+      <img src="./assets/imgs/Nadar.svg"/>
+      <p>{{ "tab3_cadena6" | translate}}</p>
+  </div>
+
+
+  <div class="contenedor_boton_flotante">
+    <ion-button *ngIf="plan!='3d'" class="boton_pie_rosa" expand="full" color="tertiary">{{"tab3_cadena7" | translate}}</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <img class="logo_header" src="./assets/imgs/cara_header.svg"/>
+    <h4 class="texto_header">{{ "entrar_videollamada_cadena1" | translate}}</h4>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="contenido">
+      <img class="imagen" src="./assets/imgs/vamos.svg"/>
+      <h1>{{"entrar_videollamada_cadena2" | translate}}</h1>
+  </div>
+
+  <div id="videos">
+      <div id="subscriber"></div>
+      <div id="publisher"></div>
+  </div>
+
+</ion-content>
+
+<div class="contenedor_boton_flotante">
+  <ion-button class= "boton_pie_rojo" (click)="endCall()" expand="full" color="danger" >Cancelar Videollamada</ion-button>
+
+</div>
+
+

@@ -1,0 +1,160 @@
+form{
+  vertical-align: middle;
+  text-align: center;
+  margin-top:25px;
+  margin-bottom: 60px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+ion-toolbar{
+  height: 40px;
+}
+
+ion-toolbar ion-buttons{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  --box-shadow:none !important;
+  --background: white;
+  color: #212322;
+}
+.logo_header{
+  width: 18px;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  margin-bottom: 5px;
+}
+
+.texto_header{
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.fecha{
+  width:100%;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+#hora{
+  background: url(src/assets/imgs/Reloj.svg)  no-repeat 10px 50%;
+  padding-left: 32px;
+  margin-bottom: 4px;
+}
+#fecha{
+  background: url(src/assets/imgs/Calendario_real.svg) no-repeat 10px 50%;
+  padding-left: 32px;
+}
+#utc{
+  font-size: 12px;
+  margin: 0px;
+}
+
+ion-item{
+  --border-width:0px !important;
+  --highlight-color-focused:none !important;
+  --inner-border-width: 0px !important;
+  --full-highlight-height: none;
+
+}
+
+ion-datetime{
+  font-family: HKGrotesk;
+  font-size: 18px;
+  margin: 0px auto;
+  margin-bottom: 10px;
+  width: 200px;
+  min-width: 148px;
+  height: 55px;
+  display: inline-table;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+}
+
+.center{
+  text-align: center;
+}
+
+.rojo{
+  color:red;
+}
+
+.boton_pie_rosa{
+  text-transform: none;
+  font-family: HKGrotesk !important;
+  font-weight: bold;
+  font-size: 20px;
+  height: 60px;
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 0;
+  --border-style: none;
+  --color: #4A5E6E;
+}
+.contenedor_boton_flotante{
+  margin-top: -4px;
+}
+
+.listado{
+  text-align: left;
+}
+
+.listado h5{
+  font-size: 16px;
+}
+
+.listado p{
+  margin-top:0px; 
+}
+
+.listado a{
+  text-decoration: underline;
+  color: #212322;
+}
+
+.cita{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.usuarios{
+  text-align: center;
+  width: 50%;
+  display: -webkit-box;
+}
+
+.usuarios h3{
+  margin: 0 auto;
+}
+
+.selecciona_persona{
+  width:100%;
+  text-align: center;
+}
+
+.persona2{
+  width: 46%;
+  display: inline-table;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  border-radius: 100%;
+
+}
+
+.contenido{
+  vertical-align: middle;
+  text-align: center;
+  margin-top:80px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+

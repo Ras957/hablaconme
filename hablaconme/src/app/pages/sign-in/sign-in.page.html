@@ -1,0 +1,33 @@
+<ion-content class="background">
+    <form [formGroup]="login_form" >
+      <h1>{{ "signin_cadena1" | translate}}</h1>
+      <p>{{ "signin_cadena2" | translate}}</p>
+
+      <ion-button class="boton_social_google" color="light" expand="full" shape="round" size="large" (click)="loginGoogle()">
+        <img class="logo" src="./assets/imgs/sociales/Google.svg"/>
+        {{ "signin_cadena3" | translate}}
+      </ion-button>
+      <ion-button class="boton_social_facebook" color="secondary" expand="full" shape="round" size="large" (click)="loginFacebook()">
+        <img class="logo" src="./assets/imgs/sociales/Facebook.svg"/>
+        {{ "signin_cadena4" | translate}}
+      </ion-button>
+
+      <p class="linea_texto">{{ "signin_cadena5" | translate}}</p>
+      <ion-item >
+        <ion-input class="input_email" type="text" name="email" formControlName="email" placeholder='{{ "signin_cadena6" | translate}}' ></ion-input>
+      </ion-item>
+      <ion-item >
+          <ion-input class="input_email" type="password" name="password" formControlName="password" placeholder='{{ "signin_cadena7" | translate}}' ></ion-input>
+      </ion-item>
+ 
+      <ion-button class="boton" color="light" expand="full" shape="round" size="large" (click)="login()" [disabled]="!login_form.valid">{{ "signin_cadena8" | translate}}</ion-button>
+  
+
+  
+      
+    </form>
+    <div class="contenedor_bajo">
+        <a class="enlace_login" button routerLink="/reestablecer-contraseya">{{ "signin_cadena9" | translate}}</a>
+      <a class="enlace_login" button routerLink="/sign-up">{{ "signin_cadena10" | translate}}</a>
+    </div>
+  </ion-content>

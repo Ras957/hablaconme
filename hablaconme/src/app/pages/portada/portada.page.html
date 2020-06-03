@@ -1,0 +1,46 @@
+<ion-content class="background">
+  <ion-slides class="slides" pager="true" [options]="slideOpts">
+    <ion-slide>
+      <img class="logo" src="./assets/imgs/Blanco.svg"/>
+      <p>{{ "portada_cadena1" | translate}}</p>
+      <p>{{ "portada_cadena2" | translate}} <strong>{{ "portada_cadena3" | translate}}</strong></p>
+    </ion-slide>
+    <ion-slide>
+        <img class="imagenes" src="./assets/imgs/Sof.svg"/>
+      <h1>{{ "portada_cadena4" | translate}}</h1>
+      <p>{{ "portada_cadena5" | translate}}</p>
+    </ion-slide>
+    <ion-slide>
+        <img class="imagenes" src="./assets/imgs/Calendario.svg"/>
+      <h1>{{ "portada_cadena6" | translate}}</h1>
+      <p>{{ "portada_cadena7" | translate}}</p>
+    </ion-slide>
+    <ion-slide>
+        <img class="imagenes" src="./assets/imgs/Incognito.svg"/>
+      <h1>{{ "portada_cadena8" | translate}}</h1>
+      <p>{{ "portada_cadena9" | translate}} </p>
+    </ion-slide>
+    <ion-slide>
+        <img class="imagenes" src="./assets/imgs/Risas.svg"/>
+      <h1>{{ "portada_cadena10" | translate}}</h1>
+      <p>{{ "portada_cadena11" | translate}}</p>
+    </ion-slide>
+    <ion-slide>
+        <img class="imagenes" src="./assets/imgs/Planes.svg"/>
+      <h1>{{ "portada_cadena12" | translate}}</h1>
+      <p>{{ "portada_cadena13" | translate}}</p>
+    </ion-slide>
+    <ion-slide>
+        <img class="imagenes" src="./assets/imgs/Tesoro.svg"/>
+      <h1>{{ "portada_cadena14" | translate}}</h1>
+      <p>{{ "portada_cadena15" | translate}}</p>
+    </ion-slide>
+  </ion-slides>
+  <div class="contenedor_bajo">
+    <ion-button class="boton" color="light" expand="full" shape="round" size="large" routerLink="/{{rutaBoton}}">{{"portada_btn_comenzar" | translate}}</ion-button>
+   <!--<a class="enlace_login" button routerLink="/primera-sesion">{{"portada_tengo_cuenta" | translate}}</a>--> 
+    
+
+
+  </div>
+</ion-content>

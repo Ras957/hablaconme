@@ -1,0 +1,93 @@
+form{
+    vertical-align: middle;
+    text-align: center;
+    color:white;
+    margin-top:50px;
+}
+ion-item{
+    --border-width:0px !important;
+    --highlight-color-focused:none !important;
+    --inner-border-width: 0px !important;
+    --full-highlight-height: none;
+}
+.boton{
+    margin: 0% 5% 5% 5%;
+    text-transform: none;
+    color: #D9017A !important;
+    --ion-color-contrast: none !important;
+    font-family: HKGrotesk !important;
+    font-weight: bold;
+}
+
+.boton_social_google{
+    margin: 5% 5% 5% 5%;
+    text-transform: none;
+    color: #212322 !important;
+    --ion-color-contrast: none !important;
+    font-size: 16px;
+    height: 44px;
+    justify-content: left;
+}
+
+.boton_social_facebook{
+    margin: 5% 5% 5% 5%;
+    text-transform: none;
+    color: #FFFFFF !important;
+    --ion-color-contrast: none !important;
+    font-size: 16px;
+    height: 44px;
+    justify-content: left;
+    --ripple-color:blue !important;
+}
+.logo{
+    margin-right: 8px;
+    width: 23px;
+}
+.input_email{
+    border: 1px solid white;
+    border-radius: 6px;
+    height: 50px;
+    --color: white;
+    --placeholder-color: white;
+    --placeholder-opacity: 1;
+    --padding-start:15px !important;
+    --padding-end:15px !important;
+}
+.politicas{
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+    width: 70%;
+    overflow: visible;
+}
+.politicas h5{
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.politicas p{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+ion-toggle{
+    bottom: 55px;
+    right: -100%;
+    --handle-background: white !important;
+    
+}
+
+
+.linea_texto{
+    overflow: hidden;
+    margin-top: 0px;
+}
+
+.contenedor_bajo{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.enlace_login{
+    color:white;
+}

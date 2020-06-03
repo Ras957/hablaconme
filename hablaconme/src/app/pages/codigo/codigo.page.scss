@@ -1,0 +1,79 @@
+
+form{
+    vertical-align: middle;
+    text-align: center;
+    color:white;
+    margin-top:40px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.imagenes{
+    width: 35%;
+    display: inline-table;
+    margin-top: 26px;
+}
+.imagenes_pie{
+    width: 60px;
+    display: inline-table;
+    margin-bottom: 26px;
+}
+.imagenes_pie_globo{
+    width: 30px;
+    display: inline-table;
+    margin-bottom: 26px;
+    margin-left: 13px;
+}
+.contenedor_imagen{
+    width: 85px;
+}
+
+.entrada{
+    width: 100%;
+    display: -webkit-inline-box;
+   
+}
+.input_codigo h3{
+    color: #FFFFFF;
+    margin-right: 5px;
+    margin-left: -30px;
+  
+}
+
+.input_codigo{
+    border: 1px solid white;
+    border-radius: 6px;
+    height: 50px;
+    width: 70px;
+    margin: 0 auto !important;
+    text-align: left;
+    font-family: HKGroteskBold !important;
+    font-size: 22px;
+    --color: white;
+    --placeholder-color: white;
+    --placeholder-opacity: 1;
+    --padding-start:15px !important;
+    --padding-end:15px !important;
+    
+  
+}
+
+.pie{
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background: #E5E5E5;
+    color:#212322;
+}
+
+.pie p{
+    margin-top:0;
+    width: 100%;
+
+}
+ion-item{
+    --border-width:0px !important;
+    --highlight-color-focused:none !important;
+    --inner-border-width: 0px !important;
+    --full-highlight-height: none;
+}

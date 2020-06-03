@@ -1,0 +1,66 @@
+ion-content.background{
+    --ion-background-color: transparent !important;
+    background: url(src/assets/imgs/portada-app.png)  0 0/100% 100% no-repeat ,linear-gradient(45deg, rgba(254, 1, 144, 0.75) 22%, #f3543f 51.01%, #f3e153 89%);
+}
+.logo{
+    width: 60%;
+    display: inline-table;
+    margin-top: 26px;
+    margin-bottom: 20px;
+}
+
+.imagenes{
+    width: 35%;
+    display: inline-table;
+    margin-top: 26px;
+}
+
+.slides{
+    margin-top:20%;
+    margin-bottom: -15%;
+    background-color: rgba(0,0,0, 0.4);
+    color:white;
+    //display: block;
+    //text-align: center;
+    --bullet-background-active: #D9017A;
+    --bullet-background: #FFFFFF;
+    overflow: visible;
+    height: 350px;
+    
+}
+.slides p{
+    margin: 0px 15px 15px 15px;
+    //text-align : justify;
+}
+
+
+.swiper-zoom-container{
+    display: block;
+}
+.swiper-pagination-bullets{
+    bottom: -40px !important;
+}
+
+.swiper-pagination-bullet{
+    opacity: 0.8 !important;
+}
+
+.contenedor_bajo{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.boton{
+    margin: 35% 5% 5% 5%;
+    text-transform: none;
+    color: #D9017A !important;
+    --ion-color-contrast: none !important;
+    font-family: HKGrotesk !important;
+    font-weight: bold;
+
+}
+
+.enlace_login{
+    color:white;
+}
+

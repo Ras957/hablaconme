@@ -1,0 +1,107 @@
+form{
+    vertical-align: middle;
+    text-align: center;
+    margin-top:25px;
+    margin-bottom: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  ion-toolbar{
+    height: 40px;
+  }
+  
+  ion-toolbar ion-buttons{
+    position: absolute;
+    top:-1px;
+    right: 0px;
+    --box-shadow:none !important;
+    --background: white;
+    color: #212322;
+  }
+  .logo_header{
+    width: 18px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .texto_header{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  .range{
+      --border-width:0px !important;
+      --highlight-color-focused:none !important;
+      --inner-border-width: 0px !important;
+      --full-highlight-height: none;
+  }
+
+  ion-range{
+    --bar-background: #e0b500 !important;
+    --bar-background-active: #d9017a;
+    --knob-background: #D9017A ;
+    --knob-a-background: blue ;
+    --knob-size: 30px;
+  }
+
+  .imagen_range{
+    width: 25px;
+    border-radius: 100%;
+  }
+
+
+  ion-item{
+    --border-width:0px !important;
+    --highlight-color-focused:none !important;
+    --inner-border-width: 0px !important;
+    --full-highlight-height: none;
+    --padding-start:15px;
+    --padding-end:15px;
+}
+
+.metas_activas{
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+ion-avatar{
+  width: 25px;
+  height: 25px;
+}
+  
+.boton_pie_rosa{
+  text-transform: none;
+  font-family: HKGrotesk !important;
+  font-weight: bold;
+  font-size: 20px;
+  height: 60px;
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 0;
+  --border-style: none;
+  --color: #4A5E6E;
+  position: absolute;
+  bottom: 0;
+
+}
+.contenedor_boton_flotante{
+  margin-top: -10px;
+}
+
+.upgrade_plan{
+  background: white;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 40%;
+  height: 200px;
+  padding: 30px;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
