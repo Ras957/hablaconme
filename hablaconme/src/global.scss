@@ -1,0 +1,109 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+@font-face {
+    font-family: HKGrotesk;
+    src: url("src/assets/fonts/HKGrotesk-Regular.otf");
+    }
+@font-face{
+    font-family: HKGroteskBold;
+    src: url("src/assets/fonts/HKGrotesk-SemiBoldLegacy.otf");
+}
+
+ion-app{
+    background: white;
+}
+
+p, a, button{
+    font-family:HKGrotesk !important;
+}
+h1,h2,h3,h4,h5{
+    font-family: HKGroteskBold !important;
+
+}
+
+.background{
+    --ion-background-color: transparent !important;
+    background:linear-gradient(45deg, rgba(254, 1, 144, 0.75) 22%, #f3543f 51.01%, #f3e153 89%);
+}
+
+.alert{
+    text-align: center;
+    padding-top: 130px !important;
+    --background: url(./assets/imgs/avion.svg) no-repeat 50% 70%, linear-gradient(45deg, rgba(255, 255, 255, 1) 22%,rgba(255, 255, 255, 1) 51.01%,rgba(255, 255, 255, 1) 89%);
+    --height: 260px;
+}
+
+.alert_meta{
+    text-align: center;
+    --background: url(./assets/imgs/fuegos_artificiales.svg) no-repeat 50% 75% /60%, linear-gradient(45deg, rgba(255, 255, 255, 1) 22%,rgba(255, 255, 255, 1) 51.01%,rgba(255, 255, 255, 1) 89%);
+    --height: 320px;
+}
+.alert_meta h2{
+    text-align: center;
+    font-size: 28px !important;
+}
+
+.alert_pago{
+    text-align: center;
+    --background: url(./assets/imgs/Pago_ok.svg) no-repeat 50% 75% /60%, linear-gradient(45deg, rgba(255, 255, 255, 1) 22%,rgba(255, 255, 255, 1) 51.01%,rgba(255, 255, 255, 1) 89%);
+    --height: 280px;
+}
+
+.alert_pago h2{
+    text-align: center;
+    font-size: 28px !important;
+}
+.alert_pago_error{
+    text-align: center;
+    --background: url(./assets/imgs/Pago_error.svg) no-repeat 50% 75% /60%, linear-gradient(45deg, rgba(255, 255, 255, 1) 22%,rgba(255, 255, 255, 1) 51.01%,rgba(255, 255, 255, 1) 89%);
+    --height: 320px;
+}
+
+.alert_pago_error h2{
+    text-align: center;
+    font-size: 28px !important;
+}
+
+.separador{
+    height: 1px;
+    width: 100%;
+    background: #212322;
+    margin-bottom: 30px;
+}
+
+/*
+ion-header{
+    margin-top: 35px;
+}
+*/
+
+
+.custom-class{
+    --width:100px;
+    --spinner-color: #D9017A;
+
+    .loading-wrapper {
+      background: transparent;
+      box-shadow: none;
+
+   
+    }
+    .spinner-crescent{
+      width: 50px;
+      height: 100px;
+    }
+  }
+
+  ion-progress-bar{
+      position: absolute;
+  }
