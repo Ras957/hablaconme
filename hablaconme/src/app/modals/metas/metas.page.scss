@@ -1,0 +1,83 @@
+ion-toolbar{
+    height: 40px;
+}
+.atras{
+    width: 40px;
+    height:40px;
+    position: absolute;
+    top: 0px;
+    margin-bottom: 5px;
+}
+.logo_header{
+    width: 10px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .texto_header{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  form{
+    vertical-align: middle;
+    text-align: center;
+    margin-top:25px;
+    margin-bottom: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  form ion-input{
+    font-size: 22px;
+  }
+
+  form img{
+    border-radius: 100%;
+    width: 180px;
+  }
+
+  ion-textarea{
+      height: 200px;
+  }
+
+  .boton{
+    margin: 5% 0% 5% 0%;
+    text-transform: none;
+    --background: #D9017A !important;
+    color: white;
+    --ion-color-contrast: none !important;
+    font-family: HKGrotesk !important;
+    font-weight: bold;
+  }
+
+  a{
+      color: #212322;
+      text-decoration: underline;
+  }
+
+  .range{
+    --border-width:0px !important;
+    --highlight-color-focused:none !important;
+    --inner-border-width: 0px !important;
+    --full-highlight-height: none;
+}
+
+ion-range{
+  --bar-background: #e0b500 !important;
+  --bar-background-active: #d9017a;
+  --knob-background: #D9017A ;
+  --knob-a-background: blue ;
+  --knob-size: 30px;
+}
+
+.imagen_range{
+  width: 25px !important;
+  border-radius: 100% !important;
+}

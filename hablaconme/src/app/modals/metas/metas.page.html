@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <div (click)="dismiss()" class="atras">  </div>
+    <img class="logo_header"  src="./assets/imgs/Izquierda2.svg"/>
+    <h4 class="texto_header">{{meta.nombre_cliente}}</h4>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="meta_form">
+
+  <h3 *ngIf="admin == false">{{meta.titulo}}</h3>
+  <img (click)="presentModalImagenMeta()" src="{{imagen_seleccionada.url}}"/>
+  <ion-input name="titulo" formControlName="titulo" *ngIf="admin == true" value="{{meta.titulo}}" ></ion-input>
+  <p *ngIf="admin == false">{{meta.descripcion}}</p>
+  <ion-textarea name="descripcion" formControlName="descripcion" *ngIf="admin == true" value="{{meta.descripcion}}"></ion-textarea>
+  
+  <ion-item>
+      <ion-range  min="0" max="100" formControlName="rango_cliente" disabled="true">
+        <img class="imagen_range" slot="start" src="{{server_URL}}{{meta.imagen_cliente}}" />
+        <ion-icon slot="end" size="large" name="ribbon"></ion-icon>
+      </ion-range>
+    </ion-item>
+        <ion-item>
+          <ion-range  min="0" max="100" formControlName="rango_admin" disabled="false">
+            <img class="imagen_range" slot="start" src="{{server_URL}}{{meta.imagen_admin}}" />
+            <ion-icon slot="end" size="large" name="ribbon"></ion-icon>
+          </ion-range>
+        </ion-item>
+  
+
+  <ion-button class="boton"  expand="full" shape="round" size="large" (click)="actualizarMeta()">Guardar cambios</ion-button>
+    <a (click)="eliminarMeta()">Borrar meta</a>
+  </form>
+</ion-content>

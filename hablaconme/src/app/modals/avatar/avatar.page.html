@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+      <div (click)="dismiss()" class="atras">  </div>
+      <img class="logo_header"  src="./assets/imgs/Izquierda2.svg"/>
+      <h4 class="texto_header">{{"avatar_cadena1" | translate}}</h4>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content>
+  <form>
+    <ion-grid>
+      <ion-col  size="4" *ngFor="let item of listadoAvatares; let i = index">
+              <ng-container *ngIf="i ==0">
+              <img src="{{item}}" (click)="fileInput.click()"/>
+              <input #fileInput style="display: none" type="file" (change)="pulsarAvatar(item,$event)">
+              </ng-container>
+              <ng-container *ngIf="i != 0">
+                  <img src="{{item.url}}" (click)="imagenEscogida(item)"/>
+              </ng-container>
+      </ion-col>
+    </ion-grid>
+  </form>
+
+</ion-content>

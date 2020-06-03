@@ -1,0 +1,40 @@
+<ion-header>
+      <ion-toolbar>
+          <div (click)="dismiss()" class="atras"> </div>
+          <img class="logo_header" src="./assets/imgs/Izquierda2.svg" />
+          <h4 class="texto_header">{{ "tab2_cadena1" | translate}}</h4>
+          <ion-icon *ngIf="!enlinea" class="icono_rojo" name="radio-button-off"></ion-icon>
+          <ion-icon *ngIf="enlinea" class="icono_verde" name="radio-button-on"></ion-icon>
+      </ion-toolbar>
+  </ion-header>
+
+<ion-content class="background" #content>
+    <ion-refresher slot="fixed"  (ionRefresh)="cargarMensajesAntiguos($event)">
+        <ion-refresher-content refreshingSpinner="circles"></ion-refresher-content>
+      </ion-refresher>
+    <ion-list *ngFor="let mensaje of listadoMensajes">
+        <ion-item class="mensajes-derecha" *ngIf="mensaje.emisor_id == emisor">      
+            <div class="texto verde">
+                <p>{{mensaje.mensaje}}</p>
+                <h5>{{mensaje.created_at}}</h5>
+                <ion-icon *ngIf="mensaje.leido != true" name="done-all"></ion-icon>
+                <ion-icon *ngIf="mensaje.leido == true" class="azul" name="done-all"></ion-icon>
+            </div>
+            <img src="{{server_URL}}{{mensaje.avatar}}"  />
+           </ion-item>
+
+          <ion-item class="mensajes-izquierda" *ngIf="mensaje.emisor_id != emisor">      
+            <img src="{{server_URL}}{{mensaje.avatar}}"  />
+            <div class="texto">
+            <p>{{mensaje.mensaje}}</p>
+            <h5>{{mensaje.created_at}}</h5>
+            </div>
+            </ion-item>
+    </ion-list>
+</ion-content>
+<form [formGroup]="mensaje_form">
+ <ion-textarea name="mensaje" formControlName="mensaje"  placeholder="Escribe un mensaje" (ionFocus)="irAbajo()"></ion-textarea> 
+ <ion-fab-button size="small" color="tertiary" (click)="enviarMensaje()">
+    <ion-icon name="send"></ion-icon>
+</ion-fab-button>
+</form>

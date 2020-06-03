@@ -1,0 +1,94 @@
+ion-toolbar{
+    height: 40px;
+}
+.atras{
+    width: 40px;
+    height:40px;
+    position: absolute;
+    top: 0px;
+    margin-bottom: 5px;
+}
+.logo_header{
+    width: 10px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .texto_header{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+form{
+    vertical-align: middle;
+    text-align: left;
+    margin-top:25px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.boton{
+    margin: 5% 0% 5% 0%;
+    text-transform: none;
+    --background: #D9017A !important;
+    color: white;
+    --ion-color-contrast: none !important;
+    font-family: HKGrotesk !important;
+    font-weight: bold;
+}
+
+ion-grid{
+    width: 200px;
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 15px;
+}
+ion-col{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+ion-col p{
+    margin-top: 0;
+}
+.imagen_tarjeta{
+    width: 50px;
+    margin: 0 auto;
+}
+
+.imagen_paypal{
+    width: 32px;
+    margin: 0 auto;
+
+}
+
+.formulario_tarjeta{
+    float:left;
+    width: 100%;
+}
+
+.input_tarjeta1{
+    border:1px solid #F2F0E8;
+    --padding-start:10px;
+    --color:#212322;
+    font-family:  HKGrotesk;
+    --placeholder-opacity: 1;
+    margin-bottom: 20px
+}
+.input_tarjeta2{
+    border:1px solid #F2F0E8;
+    --padding-start:10px;
+    --color:#212322;
+    font-family:  HKGrotesk;
+    --placeholder-opacity: 1;
+    margin-bottom: 20px;
+    width: 60px;
+    margin-right: 20px;
+    float: left;
+}
+
+

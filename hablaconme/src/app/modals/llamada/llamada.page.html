@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <div (click)="dismiss()" class="atras"> </div>
+        <img class="logo_header" src="./assets/imgs/Izquierda2.svg" />
+        <h4 class="texto_header">{{"llamada_cadena1" | translate}}</h4>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="selecciona_persona">
+        <img class="persona" src="{{imagenPerfil}}" />
+    </div>
+
+    <form [formGroup]="llamada_form">
+        <ion-item>
+            <ion-label position="stacked">{{ "llamada_cadena2" | translate}}</ion-label>
+            <ion-select  formControlName="usuario" (ionChange)="getUsuario($event)" interface="action-sheet" cancelText="Cancelar">
+              <ion-select-option selected="selected" value="">{{"llamada_cadena3" | translate}}</ion-select-option>
+              <ng-container *ngFor="let usuario of listadoUsuarios">
+                <ion-select-option  value="{{usuario.id}}"> {{usuario.nombre}} </ion-select-option>
+              </ng-container>
+            </ion-select>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label position="stacked">{{ "llamada_cadena4" | translate}}</ion-label>
+            <ion-datetime (ionChange)="listarHoras()" name="fecha" formControlName="fecha" placeholder='{{ "llamada_cadena5" | translate}}' color="secondary" id="fecha" displayFormat="DD/MM/YYYY"  value="{{datetime_min}}" min="{{datetime_min}}" max="{{datetime_max}}" done-text="Hecho" cancelText="Cancelar"></ion-datetime>
+        </ion-item>
+        <ion-item *ngIf="horasDisponibles.length >0">
+            <ion-label position="stacked">{{ "llamada_cadena6" | translate}}</ion-label>
+            <ion-datetime  name="hora" formControlName="hora" placeholder='{{ "llamada_cadena7" | translate}}' display-format="HH:mm" hourValues="{{horasDisponibles}}" minuteValues="0" done-text="Hecho" cancelText="Cancelar" ></ion-datetime>
+        </ion-item>
+
+        <ion-item *ngIf="horasDisponibles.length >0">
+            <ion-label position="stacked">{{ "llamada_cadena9" | translate}}</ion-label>
+            <ion-input formControlName="telefono" placeholder='{{ "llamada_cadena10" | translate}}'></ion-input>
+        </ion-item>
+        <ion-button [disabled]="!llamada_form.valid" class="boton" expand="full" shape="round" size="large" (click)="crearLlamada()">
+            {{"llamada_cadena8" | translate}}</ion-button>
+
+    </form>
+</ion-content>

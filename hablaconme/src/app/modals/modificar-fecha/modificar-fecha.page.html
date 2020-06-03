@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+      <div (click)="dismiss()" class="atras">  </div>
+      <img class="logo_header"  src="./assets/imgs/Izquierda2.svg"/>
+      <h4 class="texto_header">{{"modificarfecha_cadena1" | translate}}</h4>
+  
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <form  [formGroup]="llamada_form">
+    <h3>{{"modificarfecha_cadena2" | translate}}</h3>
+    <p>{{"modificarfecha_cadena3" | translate}}</p>
+    <p>{{"modificarfecha_cadena4" | translate}}</p>
+    <p>{{"modificarfecha_cadena5" | translate}} {{reserva.fecha}}</p>
+
+    <h3>{{"modificarfecha_cadena6" | translate}}</h3>
+    <div class="fecha">
+      <ion-item>
+        <ion-datetime (ionChange)="listarHoras()" name="fecha" formControlName="fecha"
+          placeholder='{{ "formulario_fechayhora1" | translate}}' color="secondary" id="fecha"
+          displayFormat="DD/MM/YYYY" value="{{datetime_min}}" min="{{datetime_min}}" max="{{datetime_max}}"
+          done-text="Hecho" cancelText="Cancelar"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="horasDisponibles.length >0">
+        <ion-datetime id="hora" name="hora" formControlName="hora"
+          placeholder='{{ "formulario_fechayhora2" | translate}}' display-format="HH:mm"
+          hourValues="{{horasDisponibles}}" minuteValues="0" done-text="Hecho" cancelText="Cancelar"></ion-datetime>
+      </ion-item>
+      <div *ngIf="horasDisponibles.length >0">
+        <p id="utc">{{ "formulario_fechayhora3" | translate}} {{utc_formato}}</p>
+      </div>
+      <ion-item class="center" *ngIf="horasDisponibles.length ==0 && noHoras!=false;">
+        <h5 class="rojo">{{ "tab1_cadena11" | translate}}</h5>
+      </ion-item>
+    </div>
+
+      <div class="boton_contenedor">
+      <ion-button (click)="modificarVideollamada()" [disabled]="!llamada_form.valid"  class="btn"  shape="round">
+          {{ "modificarfecha_cadena7" | translate}}
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

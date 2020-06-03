@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <div (click)="dismiss()" class="atras">  </div>
+    <img class="logo_header"  src="./assets/imgs/Izquierda2.svg"/>
+    <h4 class="texto_header">{{"pago_cadena1" | translate}}</h4>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="tarjeta_form">
+    <h3>{{"pago_cadena2" | translate}}</h3>
+    <p>Plan {{datos_pago.nombre}} modalidad {{datos_pago.modalidad}}.</p>
+
+    <h3>{{"pago_cadena4" | translate}}</h3>
+    <p>{{datos_pago.precio}} €</p>
+
+    <h3>{{"pago_cadena6" | translate}}</h3>
+    <div class="pagos">
+        <ion-grid>
+            <ion-row >
+              <ion-col><img (click)="formaPagoTarjeta()" class="imagen_tarjeta" src="/assets/imgs/tarjeta.svg"/>
+              </ion-col>
+              <ion-col><img (click)="formaPagoPaypal()" class="imagen_paypal" src="/assets/imgs/paypal.svg" />
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label><p>{{"pago_cadena7" | translate}}</p></ion-label>
+                <!--<ion-checkbox (ionChange)="formaPago()" formControlName="tarjeta" color="secondary"></ion-checkbox>-->
+              </ion-col>
+              <ion-col>
+                  <ion-label><p>{{"pago_cadena8" | translate}}</p></ion-label>
+                 <!--<ion-checkbox formControlName="paypal" color="secondary"></ion-checkbox>--> 
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+
+    <div class="formulario_tarjeta" *ngIf="tarjetaSeleccionado">
+        <ion-input formControlName="tarjeta_numero" class="input_tarjeta1" type="text" name="numero" minlength="16" maxlength="16"  placeholder='{{"pago_cadena11" | translate}}' ></ion-input>
+        <ion-input formControlName="tarjeta_mm" class="input_tarjeta2" type="text" name="mm" minlength="1" maxlength="2" placeholder='Mes' ></ion-input>
+        <ion-input formControlName="tarjeta_aa" class="input_tarjeta2" type="text" name="aa"  minlength="2" maxlength="2" placeholder='Año' ></ion-input>
+        <ion-input formControlName="tarjeta_cvc" class="input_tarjeta2" type="text" name="cvc" minlength="3" maxlength="3" placeholder='{{"pago_cadena13" | translate}}' ></ion-input>
+    </div>
+
+    <p *ngIf="paypalSeleccionado">{{"pago_cadena9" | translate}}</p>
+    <ion-button *ngIf="tarjetaSeleccionado" [disabled]="!tarjeta_form.valid" class="boton"  expand="full" shape="round" size="large" (click)="realizarPago()">{{"pago_cadena10" | translate}} {{datos_pago.precio}} €</ion-button>
+    <ion-button *ngIf="paypalSeleccionado" class="boton"  expand="full" shape="round" size="large" (click)="realizarPago()">{{"pago_cadena10" | translate}} {{datos_pago.precio}} €</ion-button>
+
+  </form>
+</ion-content>
