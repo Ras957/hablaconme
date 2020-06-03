@@ -1,0 +1,23 @@
+<svg width="153" height="153" viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="153" height="153" fill="#F9F9F9"/>
+<rect width="48.7826" height="2.21739" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 23.7412 56.7598)" fill="#212322"/>
+<rect width="48.7826" height="2.21739" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 23.7412 131.41)" fill="#212322"/>
+<rect width="48.7826" height="2.21739" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 96.915 58.2354)" fill="#212322"/>
+<rect width="48.7826" height="2.21739" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 96.915 131.41)" fill="#212322"/>
+<rect x="57.6514" y="95.3477" width="70.9565" height="2.21739" fill="#D9017A"/>
+<rect x="57.6514" y="22.1738" width="70.9565" height="2.21739" fill="#D9017A"/>
+<rect x="128.608" y="95.3477" width="70.9565" height="2.21739" transform="rotate(-90 128.608 95.3477)" fill="#FDDA24"/>
+<rect x="57.6514" y="24.3906" width="70.9565" height="2.21739" transform="rotate(90 57.6514 24.3906)" fill="#FDDA24"/>
+<ellipse cx="56.5429" cy="96.456" rx="3.32609" ry="3.32609" fill="#212322"/>
+<ellipse cx="129.717" cy="96.456" rx="3.32608" ry="3.32609" fill="#212322"/>
+<ellipse cx="56.5429" cy="23.2821" rx="3.32609" ry="3.32609" fill="#212322"/>
+<ellipse cx="129.717" cy="23.2821" rx="3.32608" ry="3.32609" fill="#212322"/>
+<rect x="24.3906" y="128.608" width="70.9565" height="2.21739" fill="#D9017A"/>
+<rect x="24.3906" y="55.4346" width="70.9565" height="2.21739" fill="#D9017A"/>
+<rect x="95.3477" y="128.608" width="70.9565" height="2.2174" transform="rotate(-90 95.3477 128.608)" fill="#FDDA24"/>
+<rect x="24.3906" y="57.6514" width="70.9565" height="2.21739" transform="rotate(90 24.3906 57.6514)" fill="#FDDA24"/>
+<ellipse cx="23.2821" cy="129.717" rx="3.32609" ry="3.32609" fill="#212322"/>
+<circle cx="96.456" cy="129.717" r="3.32609" fill="#212322"/>
+<ellipse cx="23.2821" cy="56.5429" rx="3.32609" ry="3.32609" fill="#212322"/>
+<ellipse cx="96.456" cy="56.5429" rx="3.32609" ry="3.32609" fill="#212322"/>
+</svg>
